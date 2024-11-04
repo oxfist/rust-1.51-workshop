@@ -1,4 +1,7 @@
 fn main() {
+    let point: (i64, i64, i64) = (0, 0, 0);
+    // point.0 = 74;
+
     let city_name = "Rustville";
 
     println!("The city of {}:\n", city_name);
@@ -10,18 +13,18 @@ fn print_population(adults: u64, kids: u32, buildings: u32) {
     // 👉 TODO compute population by adding adults to kids
     //
     // 💡 TIP: Use the `as` keyword to convert between numeric types!
-    let population = 0;
+    let population = adults + kids as u64;
 
     // 👉 TODO compute buildings_per_person by dividing buildings by population
     //
     // 💡 TIP: To get a f64 answer here, both numerator and denominator must be f64 values
-    let buildings_per_person = 0.0;
+    let buildings_per_person = buildings as f64 / population as f64;
 
     println!("    Population: {}", population);
     println!("        Adults: {}", adults);
     println!("        Kids: {}", kids);
     println!("    Buildings: {}", buildings);
-    println!("    Buildings per person: [👉 TODO print buildings_per_person here]\n");
+    println!("    Buildings per person: {}", buildings_per_person);
 
     if buildings_per_person >= 1.0 {
         println!("Everyone can have their own building!");
